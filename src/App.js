@@ -1,42 +1,55 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SuperheroList from "./SuperheroList";
+import SuperheroDetails from "./SuperheroDetails";
+
+import "./style.css";
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    const fetchSuperheroes = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/superheroes");
-        console.log(response.data);
-        setSuperheroes(response.data);
-      } catch (error) {
-        console.log("Error fetching superheroes:", error);
-      }
-    };
-
     fetchSuperheroes();
-  }, []);
+  }, [currentPage]);
+
+  const fetchSuperheroes = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/superheroes?page=${currentPage}`
+      );
+      setSuperheroes(response.data);
+    } catch (error) {
+      console.log("Error fetching superheroes:", error);
+    }
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
 
   return (
-    <div>
-      <h1>Superheroes</h1>
-      <ul>
-        {superheroes.map((superhero) => (
-          <li key={superhero._id}>
-            <h2>Nickname: {superhero.nickname}</h2>
-            <h3>Real name: {superhero.real_name}</h3>
-            <em>Catch phrase: {superhero.catch_phrase}</em>
-            <p>Description: {superhero.origin_description}</p>
-            <i>Superpowers: {superhero.superpowers.join(", ")}</i>
-            <div>
-              {superhero.images.map((imageUrl, index) => (
-                <img key={index} src={imageUrl} alt="superhero pic" />
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <h1 className="heading">Superheroes</h1>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <SuperheroList
+              superheroes={superheroes}
+              handlePrevPage={handlePrevPage}
+              handleNextPage={handleNextPage}
+              currentPage={currentPage}
+            />
+          }
+        />
+        <Route path="/superheroes/:id" element={<SuperheroDetails />} />
+      </Routes>
     </div>
   );
 };

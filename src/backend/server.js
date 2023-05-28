@@ -4,6 +4,7 @@ const { connectToDb, getDb } = require("./db");
 const cors = require("cors");
 
 const PORT = 3000;
+const PAGE_SIZE = 5;
 
 const app = express();
 app.use(express.json());
@@ -27,14 +28,21 @@ const handleError = (res, error) => {
 };
 
 app.get("/superheroes", (req, res) => {
-  const superheroes = [];
+  const page = parseInt(req.query.page) || 1;
+  // const superheroes = [];
 
   db.collection("superheroes")
     .find()
-    .forEach((superhero) => superheroes.push(superhero))
-    .then(() => {
+    .skip((page - 1) * PAGE_SIZE)
+    .limit(PAGE_SIZE)
+    .toArray()
+    .then((superheroes) => {
       res.status(200).json(superheroes);
     })
+    // .forEach((superhero) => superheroes.push(superhero))
+    // .then(() => {
+    //   res.status(200).json(superheroes);
+    // })
     .catch(() => handleError(res, "Something goes wrong..."));
 });
 
