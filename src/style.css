@@ -7,6 +7,10 @@
 .hero-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
 }
 
 .hero-list-item {
@@ -19,6 +23,16 @@
   width: 50px;
   height: 50px;
   margin-right: 10px;
+  transition: max-height 0.3s ease;
+  max-height: 50px;
+}
+
+.hero-list-item.open img {
+  max-height: 150px; /* Adjust the max height as needed */
+}
+
+.hero-list-item p {
+  margin: 0;
 }
 
 .back-link {
@@ -29,4 +43,18 @@
   padding: 5px;
   border-radius: 30px;
   text-decoration: none;
+}
+
+.hero-pic {
+  max-width: 100%;
+  height: auto;
+}
+
+.pic-container {
+  width: 200px;
+  height: 200px;
+}
+
+.pagination-controller {
+  /* margin-top: 400px; */
 }

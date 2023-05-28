@@ -14,13 +14,19 @@ const SuperheroList = ({
         {superheroes.map((superhero) => (
           <li key={superhero._id}>
             <Link to={`/superheroes/${superhero._id}`}>
-              <img src={superhero.images[0]} alt={superhero.nickname} />
+              <div className="pic-container">
+                <img
+                  className="pic-container"
+                  src={superhero.images[0]}
+                  alt={superhero.nickname}
+                />
+              </div>
               <p>{superhero.nickname}</p>
             </Link>
           </li>
         ))}
       </ul>
-      <div>
+      <div className="pagination-controller">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
           Previous Page
         </button>

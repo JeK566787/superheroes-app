@@ -37,7 +37,9 @@ const SuperheroDetails = () => {
           <p>Catch phrase: {superhero.catch_phrase}</p>
           <p>Description: {superhero.origin_description}</p>
           <p>Superpowers: {superhero.superpowers.join(", ")}</p>
-          <img src={superhero.images[0]} alt="hero pic" />
+          <div className="pic-container">
+            <img src={superhero.images[0]} alt="hero pic" />
+          </div>
         </div>
       ) : (
         <p>Loading superhero details...</p>
