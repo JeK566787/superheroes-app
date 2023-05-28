@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  const [superheroes, setSuperheroes] = useState([]);
+
+  useEffect(() => {
+    const fetchSuperheroes = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/superheroes");
+        console.log(response.data);
+        setSuperheroes(response.data);
+      } catch (error) {
+        console.log("Error fetching superheroes:", error);
+      }
+    };
+
+    fetchSuperheroes();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Superheroes</h1>
+      <ul>
+        {superheroes.map((superhero) => (
+          <li key={superhero._id}>
+            <h2>Nickname: {superhero.nickname}</h2>
+            <h3>Real name: {superhero.real_name}</h3>
+            <em>Catch phrase: {superhero.catch_phrase}</em>
+            <p>Description: {superhero.origin_description}</p>
+            <i>Superpowers: {superhero.superpowers.join(", ")}</i>
+            <div>
+              {superhero.images.map((imageUrl, index) => (
+                <img key={index} src={imageUrl} alt="superhero pic" />
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default App;

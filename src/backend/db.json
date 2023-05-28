@@ -1,0 +1,62 @@
+[
+  {
+    "nickname": "Superman",
+    "real_name": "Clark Kent",
+    "origin_description": "He was born Kal-El on the planet Krypton, before being rocketed to Earth...",
+    "superpowers": [
+      "solar energy absorption and healing factor",
+      "solar flare and heat vision",
+      "solar invulnerability",
+      "flight"
+    ],
+    "catch_phrase": "Look, up in the sky, it's a bird, it's a plane, it's Superman!",
+    "images": ["image1.jpg", "image2.jpg", "image3.jpg"]
+  },
+  {
+    "nickname": "Spider-Man",
+    "real_name": "Peter Parker",
+    "origin_description": "Peter Parker was bitten by a radioactive spider...",
+    "superpowers": [
+      "superhuman strength",
+      "agility",
+      "web-slinging",
+      "spider-sense"
+    ],
+    "catch_phrase": "With great power comes great responsibility.",
+    "images": ["image4.jpg", "image5.jpg"]
+  },
+  {
+    "nickname": "Batman",
+    "real_name": "Bruce Wayne",
+    "origin_description": "After witnessing the murder of his parents as a child, Bruce Wayne...",
+    "superpowers": [
+      "high intelligence",
+      "peak human physical condition",
+      "combat skills",
+      "utility belt gadgets"
+    ],
+    "catch_phrase": "I'm Batman.",
+    "images": ["image6.jpg", "image7.jpg"]
+  },
+  {
+    "nickname": "Wonder Woman",
+    "real_name": "Diana Prince",
+    "origin_description": "Diana Prince is an Amazonian princess...",
+    "superpowers": [
+      "superhuman strength",
+      "speed",
+      "agility",
+      "Lasso of Truth"
+    ],
+    "catch_phrase": "It's not about what you deserve; it's about what you believe.",
+    "images": ["image8.jpg", "image9.jpg", "image10.jpg"]
+  },
+  {
+    "nickname": "Captain America",
+    "real_name": "Steve Rogers",
+    "origin_description": "Steve Rogers was a frail young man who volunteered for a...",
+    "superpowers": ["enhanced strength", "agility", "indestructible shield"],
+    "catch_phrase": "I can do this all day.",
+    "images": ["image11.jpg", "image12.jpg"]
+  }
+]
