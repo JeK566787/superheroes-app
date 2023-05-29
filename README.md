@@ -27,18 +27,18 @@ The Superheroes App is a web application that allows users to browse and explore
 
 2. Install dependencies:
 
-   npm i
+   `npm i`
 
 3. Launch the serever:
 
-   npm run dev
+   `npm run dev`
 
 4. Launch react (in another terminal):
 
-   npm start
+   `npm start`
 
 5. Use this link:
 
-   `http://localhost:3001/`
+   [http://localhost:3001/]
 
 ## Enjoy the Superheroes Application
