@@ -33,13 +33,36 @@ const SuperheroDetails = () => {
       {superhero ? (
         <div>
           <h3>{superhero.nickname}</h3>
-          <p>Real Name: {superhero.real_name}</p>
-          <p>Catch phrase: {superhero.catch_phrase}</p>
-          <p>Description: {superhero.origin_description}</p>
-          <p>Superpowers: {superhero.superpowers.join(", ")}</p>
+          <p>
+            {" "}
+            <span className="detail-title">Real Name:</span>{" "}
+            {superhero.real_name}
+          </p>
+          <p>
+            {" "}
+            <span className="detail-title">Catch phrase:</span>{" "}
+            {superhero.catch_phrase}
+          </p>
+          <p>
+            {" "}
+            <span className="detail-title">Description:</span>{" "}
+            {superhero.origin_description}
+          </p>
+          <p>
+            {" "}
+            <span className="detail-title">Superpowers:</span>{" "}
+            {superhero.superpowers.join(", ")}
+          </p>
           <div className="pic-container">
             {superhero.images.map((el, idx) => (
-              <img key={idx} src={el} alt="hero pic" />
+              <img
+                key={idx}
+                src={el}
+                alt="hero pic"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
             ))}
           </div>
         </div>
