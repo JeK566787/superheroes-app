@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
+import "./styles/App.css";
 
 const SuperheroList = ({
   superheroes,
@@ -26,7 +26,7 @@ const SuperheroList = ({
           </li>
         ))}
       </ul>
-      <div className="pagination-controller">
+      <div>
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
           Previous Page
         </button>

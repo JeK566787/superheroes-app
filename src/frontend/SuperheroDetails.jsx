@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./App.css";
+import "./styles/App.css";
 
 const SuperheroDetails = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const SuperheroDetails = () => {
 
   useEffect(() => {
     fetchSuperhero();
-  }, []);
+  });
 
   const fetchSuperhero = async () => {
     try {
@@ -38,7 +38,9 @@ const SuperheroDetails = () => {
           <p>Description: {superhero.origin_description}</p>
           <p>Superpowers: {superhero.superpowers.join(", ")}</p>
           <div className="pic-container">
-            <img src={superhero.images[0]} alt="hero pic" />
+            {superhero.images.map((el, idx) => (
+              <img key={idx} src={el} alt="hero pic" />
+            ))}
           </div>
         </div>
       ) : (

@@ -40,7 +40,7 @@
   margin-top: 20px;
   background-color: rgb(134, 134, 238);
   color: white;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 30px;
   text-decoration: none;
 }
@@ -53,8 +53,4 @@
 .pic-container {
   width: 200px;
   height: 200px;
-}
-
-.pagination-controller {
-  /* margin-top: 400px; */
 }
