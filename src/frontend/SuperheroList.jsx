@@ -24,6 +24,9 @@ const SuperheroList = ({
   };
   return (
     <div>
+      <Link className="back-link" to="/new">
+        Add Superhero
+      </Link>
       <ul className="hero-list">
         {superheroes.map((superhero) => (
           <li key={superhero._id}>
@@ -36,8 +39,14 @@ const SuperheroList = ({
                 />
               </div>
               <p>{superhero.nickname}</p>
+              <button className="button">See more details</button>
             </Link>
-            <button onClick={() => handleDelete(superhero._id)}>Delete</button>
+            <button
+              className="button delete-button"
+              onClick={() => handleDelete(superhero._id)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>

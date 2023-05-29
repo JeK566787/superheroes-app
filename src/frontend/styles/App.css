@@ -58,3 +58,7 @@
 .detail-title {
   font-weight: bold;
 }
+
+.delete-button {
+  margin-left: 10px;
+}

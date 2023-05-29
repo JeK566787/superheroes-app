@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import SuperheroList from "./SuperheroList";
 import SuperheroDetails from "./SuperheroDetails";
 
 import "./styles/App.css";
+import NewSuperheroForm from "./NewSuperheroForm";
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
@@ -33,6 +34,10 @@ const App = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
+  const handleAddSuperhero = (newSuperhero) => {
+    setSuperheroes((prevSuperheroes) => [...prevSuperheroes, newSuperhero]);
+  };
+
   const deleteSuperhero = (superheroId) => {
     setSuperheroes((prevSuperheroes) =>
       prevSuperheroes.filter((superhero) => superhero._id !== superheroId)
@@ -42,6 +47,7 @@ const App = () => {
   return (
     <div className="container">
       <h1 className="heading">Superheroes</h1>
+
       <Routes>
         <Route
           path="/"
@@ -56,6 +62,10 @@ const App = () => {
           }
         />
         <Route path="/superheroes/:id" element={<SuperheroDetails />} />
+        <Route
+          path="/new"
+          element={<NewSuperheroForm handleAddSuperhero={handleAddSuperhero} />}
+        />
       </Routes>
     </div>
   );
