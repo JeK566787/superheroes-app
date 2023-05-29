@@ -33,6 +33,12 @@ const App = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
+  const deleteSuperhero = (superheroId) => {
+    setSuperheroes((prevSuperheroes) =>
+      prevSuperheroes.filter((superhero) => superhero._id !== superheroId)
+    );
+  };
+
   return (
     <div className="container">
       <h1 className="heading">Superheroes</h1>
@@ -45,6 +51,7 @@ const App = () => {
               handlePrevPage={handlePrevPage}
               handleNextPage={handleNextPage}
               currentPage={currentPage}
+              deleteSuperhero={deleteSuperhero}
             />
           }
         />

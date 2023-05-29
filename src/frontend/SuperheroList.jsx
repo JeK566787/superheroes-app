@@ -2,12 +2,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/App.css";
 
+import axios from "axios";
+
 const SuperheroList = ({
   superheroes,
   handlePrevPage,
   handleNextPage,
   currentPage,
+  deleteSuperhero,
 }) => {
+  const handleDelete = async (superheroId) => {
+    try {
+      // Make a DELETE request to the backend API to delete the superhero
+      await axios.delete(`http://localhost:3000/superheroes/${superheroId}`);
+
+      // Call the deleteSuperhero function passed as props to update the state
+      deleteSuperhero(superheroId);
+    } catch (error) {
+      console.log("Error deleting superhero:", error);
+    }
+  };
   return (
     <div>
       <ul className="hero-list">
@@ -23,6 +37,7 @@ const SuperheroList = ({
               </div>
               <p>{superhero.nickname}</p>
             </Link>
+            <button onClick={() => handleDelete(superhero._id)}>Delete</button>
           </li>
         ))}
       </ul>
