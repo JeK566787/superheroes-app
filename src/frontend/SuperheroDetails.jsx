@@ -27,9 +27,15 @@ const SuperheroDetails = () => {
   return (
     <div className="container">
       <h2 className="heading">Superhero Details</h2>
-      <Link className="back-link" to="/">
-        Back to Superhero List
-      </Link>
+      <div className="details-btn-container">
+        <Link className="back-link" to="/">
+          Back to Superhero List
+        </Link>
+        <Link className="back-link" to={`/superheroes/${id}/edit`}>
+          Edit the Superhero
+        </Link>
+      </div>
+
       {superhero ? (
         <div>
           <h3>{superhero.nickname}</h3>

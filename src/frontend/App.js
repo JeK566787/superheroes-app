@@ -6,6 +6,7 @@ import SuperheroDetails from "./SuperheroDetails";
 
 import "./styles/App.css";
 import NewSuperheroForm from "./NewSuperheroForm";
+import EditSuperheroForm from "./EditSuperheroForm";
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
@@ -62,6 +63,7 @@ const App = () => {
           }
         />
         <Route path="/superheroes/:id" element={<SuperheroDetails />} />
+        <Route path="/superheroes/:id/edit" element={<EditSuperheroForm />} />
         <Route
           path="/new"
           element={<NewSuperheroForm handleAddSuperhero={handleAddSuperhero} />}
