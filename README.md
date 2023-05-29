@@ -39,6 +39,6 @@ The Superheroes App is a web application that allows users to browse and explore
 
 5. Use this link:
 
-   [http://localhost:3001/]
+   [click to see the app](http://localhost:3001/)
 
 ## Enjoy the Superheroes Application
