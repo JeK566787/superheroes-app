@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./style.css";
+import "./App.css";
 
 const SuperheroDetails = () => {
   const { id } = useParams();

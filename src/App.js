@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SuperheroList from "./SuperheroList";
 import SuperheroDetails from "./SuperheroDetails";
 
-import "./style.css";
+import "./App.css";
 
 const App = () => {
   const [superheroes, setSuperheroes] = useState([]);
