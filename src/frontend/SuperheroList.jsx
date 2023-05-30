@@ -24,12 +24,12 @@ const SuperheroList = ({
   };
   return (
     <div>
-      <Link className="back-link" to="/new">
+      <Link className="btn" to="/new">
         Add Superhero
       </Link>
       <ul className="hero-list">
         {superheroes.map((superhero) => (
-          <li key={superhero._id}>
+          <li key={superhero._id} className="list-item">
             <Link to={`/superheroes/${superhero._id}`}>
               <div className="pic-container">
                 <img
@@ -39,10 +39,10 @@ const SuperheroList = ({
                 />
               </div>
               <p>{superhero.nickname}</p>
-              <button className="button">See more details</button>
+              <button className="btn">See more details</button>
             </Link>
             <button
-              className="button delete-button"
+              className="btn delete-button"
               onClick={() => handleDelete(superhero._id)}
             >
               Delete
@@ -50,11 +50,17 @@ const SuperheroList = ({
           </li>
         ))}
       </ul>
-      <div>
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+      <div className="pagination-container">
+        <button
+          className="btn"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
           Previous Page
         </button>
-        <button onClick={handleNextPage}>Next Page</button>
+        <button className="btn" onClick={handleNextPage}>
+          Next Page
+        </button>
       </div>
     </div>
   );

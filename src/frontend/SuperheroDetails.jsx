@@ -28,10 +28,10 @@ const SuperheroDetails = () => {
     <div className="container">
       <h2 className="heading">Superhero Details</h2>
       <div className="details-btn-container">
-        <Link className="back-link" to="/">
+        <Link className="btn" to="/">
           Back to Superhero List
         </Link>
-        <Link className="back-link" to={`/superheroes/${id}/edit`}>
+        <Link className="btn" to={`/superheroes/${id}/edit`}>
           Edit the Superhero
         </Link>
       </div>

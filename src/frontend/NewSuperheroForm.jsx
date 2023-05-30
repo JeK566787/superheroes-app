@@ -45,7 +45,7 @@ const NewSuperheroForm = ({ handleAddSuperhero }) => {
   return (
     <>
       {" "}
-      <Link className="back-link" to="/">
+      <Link className="btn" to="/">
         Back to Superhero List
       </Link>
       <form onSubmit={handleSubmit}>
@@ -102,7 +102,9 @@ const NewSuperheroForm = ({ handleAddSuperhero }) => {
           />
         </div>
         {/* Add other form fields */}
-        <button type="submit">Create Superhero</button>
+        <button className="btn" type="submit">
+          Create Superhero
+        </button>
       </form>
     </>
   );

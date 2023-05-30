@@ -1,7 +1,7 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 .hero-list {
@@ -35,9 +35,9 @@
   margin: 0;
 }
 
-.back-link {
+.btn {
   display: inline-block;
-  margin-top: 20px;
+
   background-color: rgb(134, 134, 238);
   color: white;
   padding: 5px 10px;
@@ -66,4 +66,14 @@
 .details-btn-container {
   display: flex;
   gap: 25px;
+}
+
+.list-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination-container {
+  display: flex;
+  gap: 10px;
 }
