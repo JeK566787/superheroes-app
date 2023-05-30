@@ -13,15 +13,21 @@ The Superheroes App is a web application that allows users to view, create, edit
 ## Technologies Used
 
 - Frontend:
+
   - React.js: JavaScript library for building user interfaces.
   - React Router: Routing library for handling navigation and URL routing in the app.
   - Axios: JavaScript library for making HTTP requests to the backend API.
 
 - Backend:
+
   - Node.js: JavaScript runtime for executing server-side code.
   - Express.js: Web framework for building the RESTful API.
   - MongoDB: NoSQL database for storing superhero data.
   - Mongoose: MongoDB object modeling for Node.js.
+
+- Data Base:
+
+  - MongoDB Atlas
 
 ## Getting Started
 
@@ -30,9 +36,9 @@ To get started with the Superheroes App, follow these steps:
 1. Clone the repository: `git clone https://github.com/your-username/superheroes-app.git`
 2. Navigate to the project directory: `cd superheroes-app`
 3. Install the dependencies: `npm install`
-4. Start the frontend development server: `npm start`
-5. Start the backend server (Make sure you have MongoDB installed and running): `npm run server`
-6. Open your web browser and visit: `http://localhost:3000`
+4. Start the backend server: `npm run dev`
+5. Start the frontend development server: `npm start`
+6. Open your web browser and visit: `http://localhost:3001`
 
 ## API Endpoints
 
@@ -44,7 +50,4 @@ The backend API provides the following endpoints:
 - `PATCH /superheroes/:id`: Update the details of a specific superhero.
 - `DELETE /superheroes/:id`: Delete a specific superhero.
 
-## Folder Structure
-
-The folder structure of the Superheroes App is organized as follows:
-
+## Enjoy Superheroes Appn
