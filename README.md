@@ -27,7 +27,7 @@ The Superheroes App is a web application that allows users to view, create, edit
 
 - Data Base:
 
-  - MongoDB Atlas
+  - MongoDB Atlas: Fully-managed cloud database service provided by MongoDB.
 
 ## Getting Started
 
