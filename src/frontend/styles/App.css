@@ -77,3 +77,9 @@
   display: flex;
   gap: 10px;
 }
+
+.heroes-name-lsit {
+  text-decoration: none;
+  color: #8686ee;
+  font-weight: bold;
+}

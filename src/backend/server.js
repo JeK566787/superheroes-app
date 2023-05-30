@@ -29,7 +29,6 @@ const handleError = (res, error) => {
 
 app.get("/superheroes", (req, res) => {
   const page = parseInt(req.query.page) || 1;
-  // const superheroes = [];
 
   db.collection("superheroes")
     .find()
@@ -39,10 +38,7 @@ app.get("/superheroes", (req, res) => {
     .then((superheroes) => {
       res.status(200).json(superheroes);
     })
-    // .forEach((superhero) => superheroes.push(superhero))
-    // .then(() => {
-    //   res.status(200).json(superheroes);
-    // })
+
     .catch(() => handleError(res, "Something goes wrong..."));
 });
 

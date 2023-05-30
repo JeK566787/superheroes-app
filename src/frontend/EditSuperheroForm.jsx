@@ -53,7 +53,7 @@ const EditSuperheroForm = () => {
 
   return (
     <>
-      <Link className="back-link" to={`/superheroes/${id}`}>
+      <Link className="btn" to={`/superheroes/${id}`}>
         Back to Superhero Details
       </Link>
       <form onSubmit={handleSubmit}>
@@ -109,7 +109,9 @@ const EditSuperheroForm = () => {
             onChange={(e) => setImages(e.target.value.split(","))}
           />
         </div>
-        <button type="submit">Update Superhero</button>
+        <button className="btn" type="submit">
+          Update Superhero
+        </button>
       </form>
     </>
   );

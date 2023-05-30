@@ -30,7 +30,10 @@ const SuperheroList = ({
       <ul className="hero-list">
         {superheroes.map((superhero) => (
           <li key={superhero._id} className="list-item">
-            <Link to={`/superheroes/${superhero._id}`}>
+            <Link
+              className="heroes-name-lsit"
+              to={`/superheroes/${superhero._id}`}
+            >
               <div className="pic-container">
                 <img
                   className="pic-container"

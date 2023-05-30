@@ -1,15 +1,20 @@
 const { MongoClient } = require("mongodb");
 
-const URL = "mongodb://0.0.0.0:27017/superherodb";
+const URL =
+  "mongodb+srv://JeK:Pass12345!@clusternew.wlbfc3m.mongodb.net/superheroesdb?retryWrites=true&w=majority";
 
 let dbConnection;
 
 module.exports = {
   connectToDb: (cb) => {
-    MongoClient.connect(URL)
+    MongoClient.connect(URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
       .then((client) => {
         console.log("Connected to MongoDB");
-        dbConnection = client.db("superherodb");
+        dbConnection = client.db("superheroesdb");
+        console.log(dbConnection);
         return cb();
       })
       .catch((err) => {
