@@ -14,7 +14,6 @@ module.exports = {
       .then((client) => {
         console.log("Connected to MongoDB");
         dbConnection = client.db("superheroesdb");
-        console.log(dbConnection);
         return cb();
       })
       .catch((err) => {

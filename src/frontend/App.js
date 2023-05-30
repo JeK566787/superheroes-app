@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1 className="heading">Superheroes</h1>
+      <h1 className="first-title">Superheroes</h1>
 
       <Routes>
         <Route

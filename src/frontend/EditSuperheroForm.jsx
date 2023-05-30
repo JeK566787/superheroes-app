@@ -56,35 +56,39 @@ const EditSuperheroForm = () => {
       <Link className="btn" to={`/superheroes/${id}`}>
         Back to Superhero Details
       </Link>
-      <form onSubmit={handleSubmit}>
-        <h2>Edit Superhero</h2>
+      <h2>Edit Superhero</h2>
+      <form className="form" onSubmit={handleSubmit}>
         <div>
-          <label>Nickname:</label>
+          <label className="form-label">Nickname:</label>
           <input
+            className="form-input"
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
           />
         </div>
         <div>
-          <label>Real Name:</label>
+          <label className="form-label">Real Name:</label>
           <input
+            className="form-input"
             type="text"
             value={real_name}
             onChange={(e) => setRealName(e.target.value)}
           />
         </div>
         <div>
-          <label>Description:</label>
+          <label className="form-label">Description:</label>
           <input
+            className="form-input"
             type="text"
             value={origin_description}
             onChange={(e) => setOrigin_description(e.target.value)}
           />
         </div>
         <div>
-          <label>Superpowers:</label>
+          <label className="form-label">Superpowers:</label>
           <input
+            className="form-input"
             required={true}
             type="text"
             value={superpowers}
@@ -92,8 +96,9 @@ const EditSuperheroForm = () => {
           />
         </div>
         <div>
-          <label>Catch phrase:</label>
+          <label className="form-label">Catch phrase:</label>
           <input
+            className="form-input"
             required={true}
             type="text"
             value={catch_phrase}
@@ -101,8 +106,9 @@ const EditSuperheroForm = () => {
           />
         </div>
         <div>
-          <label>Image:</label>
+          <label className="form-label">Image:</label>
           <input
+            className="form-input"
             required={true}
             type="text"
             value={images}
